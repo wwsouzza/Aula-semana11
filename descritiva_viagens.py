@@ -7,6 +7,12 @@ matplotlib.use( "Agg")
 dias = pd.read_csv( "dias.csv" , parse_dates=[ "data"])
 viagens = pd.read_csv( "viagens.csv" )
 
+print("--- 3 primeiras linhas de dias ---")
+print(dias.head(3))
+
+print("\n--- 3 primeiras linhas de viagens ---")
+print(viagens.head(3))
+
 print(dias[["temperatura_c" , "chuva_mm", "alugueis"]].describe(). round(2))
 print(dias[["chuva_mm", "alugueis"]].agg(["mean", "median", "std"]).round(2))
 
