@@ -32,21 +32,21 @@ temperatura), ("umidade" , umidade),  ( "chuva_mm", chuva), ("vento" , vento)]:
 sns.histplot(alugueis_por_dia, kde= True, ax=eixos[ 0, 0], color="#3FB950"); eixos[0,
 0].set_title( "Aluguéis/dia" )
 sns.histplot(temperatura, kde= True, ax=eixos[ 0, 1], color="#3FB950"); eixos[0,
-0].set_title( "temperatura" )
+1].set_title( "temperatura" )
 sns.histplot(umidade, kde= True, ax=eixos[ 0, 2], color="#3FB950"); eixos[0,
-0].set_title( "umidade" )
+2].set_title( "umidade" )
 sns.histplot(chuva, bins=30, ax=eixos[1, 0], color="#3FB950")
 eixos[1, 0].set_title("Chuva (assimétrica à direita)")
-sns.histplot(vento, kde= True, ax=eixos[ 1, 1], color="#3FB950"); eixos[0,
-0].set_title( "vento" )
+sns.histplot(vento, kde= True, ax=eixos[ 1, 1], color="#3FB950"); eixos[1,
+1].set_title( "vento" )
 plt.tight_layout(); plt.savefig( "figuras/a2_distribuicoes.png" , dpi=110)
 
 figura, eixos = plt.subplots(2, 3, figsize=(13, 7))
 
-stats.probplot(alugueis_por_dia, dist= "norm", plot=eixos[ 0, 0]); eixos[ 1, 0].set_title("QQ-plot aluguéis")
-stats.probplot(temperatura, dist= "norm", plot=eixos[ 0, 1]); eixos[ 1, 1].set_title( "QQ-plot temperatura")
-stats.probplot(umidade, dist= "norm", plot=eixos[ 0, 2]); eixos[ 1, 0].set_title( "QQ-plot umidade")
-stats.probplot(chuva, dist= "norm", plot=eixos[ 1, 0]); eixos[ 1, 1].set_title( "QQ-plot chuva" )
-stats.probplot(vento, dist= "norm", plot=eixos[ 1, 1]); eixos[ 1, 0].set_title( "QQ-plot vento")
+stats.probplot(alugueis_por_dia, dist= "norm", plot=eixos[ 0, 0]); eixos[ 0, 0].set_title("QQ-plot aluguéis")
+stats.probplot(temperatura, dist= "norm", plot=eixos[ 0, 1]); eixos[ 0, 1].set_title( "QQ-plot temperatura")
+stats.probplot(umidade, dist= "norm", plot=eixos[ 0, 2]); eixos[ 0, 2].set_title( "QQ-plot umidade")
+stats.probplot(chuva, dist= "norm", plot=eixos[ 1, 0]); eixos[ 1, 0].set_title( "QQ-plot chuva" )
+stats.probplot(vento, dist= "norm", plot=eixos[ 1, 1]); eixos[ 1, 1].set_title( "QQ-plot vento")
 plt.tight_layout(); plt.savefig( "figuras/a3_distribuicoes.png" , dpi=110)
 
